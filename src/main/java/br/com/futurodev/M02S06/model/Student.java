@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Student {
     private Integer registro;
-    private String name;
+    private String nome;
     private String email;
 
     public Student() {
@@ -12,7 +12,7 @@ public class Student {
 
     public Student(Integer registro, String name, String email) {
         this.registro = registro;
-        this.name = name;
+        this.nome = name;
         this.email = email;
     }
 
@@ -24,12 +24,12 @@ public class Student {
         this.registro = registro;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -55,6 +55,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "registro=" + registro + ", name=" + name + ", email=" + email + '}';
+        return "Student{" + "registro=" + registro + ", nome=" + nome + ", email=" + email + '}';
     }
 }
