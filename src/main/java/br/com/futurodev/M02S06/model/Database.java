@@ -9,11 +9,11 @@ public class Database {
     public static List<Student> students = new ArrayList<>();
 
     public static Student cadastrar(Student student) {
-        if (FindByRegistro(student.getRegistro()) != null) {
+        if (buscarPorId(student.getRegistro()) != null) {
             throw new IllegalArgumentException("Um estudante com este registro já foi cadastrado!");
         }
         students.add(student);
-        return FindByRegistro(student.getRegistro());
+        return buscarPorId(student.getRegistro());
     }
 
     public static void remover(Integer registro) {
@@ -24,7 +24,7 @@ public class Database {
         return students;
     }
 
-    public static Student FindByRegistro(Integer registro) {
+    public static Student buscarPorId(Integer registro) {
         Optional<Student> optionalStudent = students.stream()
                 .filter(task -> task.getRegistro().equals(registro)).findFirst();
         return optionalStudent.orElse(null);

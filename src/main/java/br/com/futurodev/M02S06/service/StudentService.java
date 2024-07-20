@@ -7,5 +7,9 @@ import java.util.List;
 public interface StudentService {
 
     Student cadastrar(Student student);
+
     List<Student> listar();
+
+    Student buscarPorId(Integer id);
+
 }

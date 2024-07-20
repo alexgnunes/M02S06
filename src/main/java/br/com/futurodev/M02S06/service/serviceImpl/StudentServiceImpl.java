@@ -19,4 +19,9 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> listar() {
         return Database.listar();
     }
+
+    @Override
+    public Student buscarPorId(Integer id) {
+        return Database.buscarPorId(id);
+    }
 }
