@@ -24,4 +24,9 @@ public class StudentServiceImpl implements StudentService {
     public Student buscarPorId(Integer id) {
         return Database.buscarPorId(id);
     }
+
+    @Override
+    public void remover(Integer id) {
+        Database.remover(id);
+    }
 }

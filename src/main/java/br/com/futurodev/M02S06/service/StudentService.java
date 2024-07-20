@@ -12,4 +12,6 @@ public interface StudentService {
 
     Student buscarPorId(Integer id);
 
+    void remover(Integer id);
+
 }

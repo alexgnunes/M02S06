@@ -5,6 +5,7 @@ import br.com.futurodev.M02S06.service.StudentService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,5 +38,11 @@ public class StudentController {
     public ResponseEntity<Student> buscarPorId(@PathVariable("id") Integer id) {
         Student responseEntity = studentService.buscarPorId(id);
         return responseEntity == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(responseEntity);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> remover(@PathVariable("id") Integer id) {
+         studentService.remover(id);
+        return ResponseEntity.noContent().build();
     }
 }
